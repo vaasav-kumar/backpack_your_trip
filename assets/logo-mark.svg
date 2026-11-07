@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" role="img" aria-label="BackpackYourTrip">
+  <!-- Destination pin + packed backpack + itinerary trail -->
+  <path fill="#173D32" d="M20 1.6C12.2 1.6 5.9 7.7 5.9 15.4c0 9.6 12.6 21.6 13.55 22.45a.85.85 0 0 0 1.1 0C21.5 37 34.1 25 34.1 15.4 34.1 7.7 27.8 1.6 20 1.6z"/>
+  <!-- Backpack body -->
+  <rect x="14" y="12.2" width="12" height="11.2" rx="2.2" fill="#F7F4EC"/>
+  <!-- Handle -->
+  <path d="M16.6 12.2V10.4a3.4 3.4 0 0 1 6.8 0v1.8" fill="none" stroke="#F7F4EC" stroke-width="1.7" stroke-linecap="round"/>
+  <!-- Side straps -->
+  <path d="M14 16.6H12.2M26 16.6h1.8" stroke="#F7F4EC" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Itinerary trail -->
+  <path d="M16.4 26.2c1.4-1.6 2.9-2.4 3.6-2.4.8 0 2.1.7 3.6 2.2" fill="none" stroke="#F7F4EC" stroke-width="1.35" stroke-linecap="round"/>
+  <circle cx="16.4" cy="26.2" r="1.15" fill="#F7F4EC"/>
+  <circle cx="20" cy="23.8" r="1.15" fill="#F7F4EC"/>
+  <!-- Destination -->
+  <circle cx="23.6" cy="26.2" r="1.55" fill="#E58B55"/>
+</svg>

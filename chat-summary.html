@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Share Group Chat Summary | BackpackYourTrip</title>
+  <meta name="description" content="Upload your WhatsApp group chat export, generate a trip-planning summary, edit it, and email it to BackpackYourTrip." />
+  <meta name="theme-color" content="#173D32" />
+  <link rel="canonical" href="https://backpackyourtrip.com/chat-summary.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="BackpackYourTrip" />
+  <meta property="og:title" content="Share Group Chat Summary | BackpackYourTrip" />
+  <meta property="og:description" content="Upload your WhatsApp group chat export, generate a trip-planning summary, edit it, and email it to BackpackYourTrip." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80" />
+  <meta property="og:image:alt" content="Scenic mountain road winding through a dramatic landscape" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Share Group Chat Summary | BackpackYourTrip" />
+  <meta name="twitter:description" content="Upload your WhatsApp group chat export, generate a trip-planning summary, edit it, and email it to BackpackYourTrip." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Manrope:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="assets/favicon.png" type="image/png" />
+  <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body id="top">
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-nav>
+    <div class="nav-shell">
+      <a class="logo" href="index.html" aria-label="BackpackYourTrip home">
+        <img class="logo-mark" src="assets/logo.png" alt="" width="40" height="40" decoding="async" />
+        <span class="brand-name"><span class="brand-part-a">Backpack</span><span class="brand-part-b">YourTrip</span></span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" data-nav-toggle>
+        <span class="sr-only">Menu</span>
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+      </button>
+
+      <nav class="nav-links" id="primary-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="services.html">Our Services</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About Us</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="btn btn-primary btn-sm nav-cta">Plan My Trip</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section chat-summary-page" aria-labelledby="chat-title">
+      <div class="container chat-summary-layout">
+        <div class="chat-summary-intro reveal">
+          <p class="eyebrow">Group planning</p>
+          <h1 id="chat-title">Turn Your WhatsApp Chat Into a Trip Brief</h1>
+          <p>
+            Export your customer or friends group chat from WhatsApp, upload the .txt file here,
+            and we'll draft a planning summary. Edit anything in the editor, then email it to us.
+          </p>
+
+          <ol class="chat-howto">
+            <li>
+              <strong>On WhatsApp</strong>
+              Open the group → menu → More / Export chat → <em>Without media</em> → save the .txt file.
+            </li>
+            <li>
+              <strong>Upload here</strong>
+              Drop the file below. Processing stays on your device until you choose to email.
+            </li>
+            <li>
+              <strong>Edit &amp; send</strong>
+              Tweak the summary, add your name, and open your mail app to send it to us.
+            </li>
+          </ol>
+
+          <p class="chat-privacy">
+            Your chat is summarised in the browser. Nothing is uploaded to our servers from this page.
+          </p>
+        </div>
+
+        <div class="chat-summary-panel reveal">
+          <div
+            class="chat-dropzone"
+            data-chat-dropzone
+            tabindex="0"
+            role="button"
+            aria-label="Upload WhatsApp chat export"
+          >
+            <input
+              type="file"
+              accept=".txt,text/plain"
+              data-chat-file
+              class="sr-only"
+              id="chat-file"
+            />
+            <div class="chat-dropzone-inner">
+              <span class="chat-drop-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <path d="M12 16V4m0 0 4 4m-4-4-4 4" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M4 14v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <p class="chat-drop-title">Drop WhatsApp .txt export here</p>
+              <p class="chat-drop-sub">or</p>
+              <button class="btn btn-primary btn-sm" type="button" data-chat-browse>Choose file</button>
+              <p class="chat-drop-hint">.txt only · export without media · max 8 MB</p>
+            </div>
+          </div>
+
+          <p class="chat-status" data-chat-status aria-live="polite"></p>
+          <p class="chat-error" data-chat-error hidden role="alert"></p>
+
+          <div class="chat-results" data-chat-results hidden>
+            <ul class="chat-stats" data-chat-stats></ul>
+
+            <div class="field">
+              <label for="chat-editor">Summary editor</label>
+              <p class="chat-editor-help">Update destinations, dates, budget or notes before sending.</p>
+              <textarea
+                id="chat-editor"
+                class="chat-editor"
+                data-chat-editor
+                rows="18"
+                spellcheck="true"
+              ></textarea>
+              <span class="chat-chars" data-chat-chars>0 characters</span>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="customerName">Your name <span class="optional">(optional)</span></label>
+                <input id="customerName" name="customerName" type="text" autocomplete="name" placeholder="So we know who to reply to" />
+              </div>
+              <div class="field">
+                <label for="customerEmail">Your email <span class="optional">(optional)</span></label>
+                <input id="customerEmail" name="customerEmail" type="email" autocomplete="email" placeholder="you@example.com" />
+              </div>
+            </div>
+
+            <div class="chat-actions">
+              <button class="btn btn-primary" type="button" data-chat-send>Email summary to us</button>
+              <button class="btn btn-ghost" type="button" data-chat-copy>Copy summary</button>
+              <button class="btn btn-ghost" type="button" data-chat-reset>Start over</button>
+            </div>
+
+            <p class="form-disclaimer">
+              “Email summary” opens your mail app addressed to
+              <span data-config="email">backpackyourtrip@gmail.com</span>.
+              Review the draft there, then hit send.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="index.html">
+          <img class="logo-mark" src="assets/logo.png" alt="" width="40" height="40" decoding="async" />
+          <span class="brand-name"><span class="brand-part-a">Backpack</span><span class="brand-part-b">YourTrip</span></span>
+        </a>
+        <p class="footer-tagline" data-config="tagline">You Dream. We Plan. You Travel.</p>
+        <p class="footer-note">
+          <span class="brand-name"><span class="brand-part-a">Backpack</span><span class="brand-part-b">YourTrip</span></span> provides personalised itinerary planning and travel guidance.
+          We do not sell tour packages or book flights, hotels or attraction tickets.
+        </p>
+      </div>
+
+      <nav class="footer-col" aria-label="Explore">
+        <h3>Explore</h3>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="services.html">Our Services</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About Us</a>
+        <a href="blog.html">Blog</a>
+        <a href="why.html">Why Us</a>
+        <a href="who.html">Who It's For</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+
+      <nav class="footer-col" aria-label="Contact">
+        <h3>Contact</h3>
+        <a data-config="email-link" href="mailto:backpackyourtrip@gmail.com">
+          <span data-config="email">backpackyourtrip@gmail.com</span>
+        </a>
+        <a data-config="phone-link" href="tel:+918610546126">
+          <span data-config="phone">+91 8610546126</span>
+        </a>
+        <a data-config="instagram-link" href="https://instagram.com/backpack.yourtrip" target="_blank" rel="noopener noreferrer">
+          Instagram <span data-config="instagram">@backpack.yourtrip</span>
+        </a>
+        <span data-config="address">D1401, Casagrand Firstcity, Cheran nagar, Perumbakkam, Chennai - 600100</span>
+        <a href="contact.html">Enquiry form</a>
+        <a href="chat-summary.html">Group chat summary</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <span>© <span data-year>2026</span> <span class="brand-name"><span class="brand-part-a">Backpack</span><span class="brand-part-b">YourTrip</span></span>. All rights reserved.</span>
+        <a class="back-to-top" href="#top">Back to top</a>
+      </div>
+    </div>
+  </footer>
+
+  <a
+    class="whatsapp-float"
+    data-whatsapp-float
+    href="https://wa.me/918610546126"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat on WhatsApp"
+  >
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+      <path d="M20.5 3.5A11 11 0 0 0 3.1 17.1L2 22l5-1.1A11 11 0 1 0 20.5 3.5zm-8.5 17a9 9 0 0 1-4.6-1.3l-.3-.2-3 .7.7-2.9-.2-.3a9 9 0 1 1 7.4 4z"/>
+      <path d="M17.1 14.4c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.7.9-.3.2-.5.1a7.4 7.4 0 0 1-2.2-1.3 8.2 8.2 0 0 1-1.5-1.9c-.2-.3 0-.4.1-.5l.4-.4.2-.4c.1-.2 0-.3 0-.4l-.8-1.9c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3s-.8.8-.8 1.9.8 2.2.9 2.3c.1.2 1.6 2.5 3.9 3.5 2.3 1 2.3.7 2.7.7.4 0 1.3-.5 1.5-1s.2-.9.1-1-.2-.2-.4-.3z"/>
+    </svg>
+  </a>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+  <script src="chat-summary.js"></script>
+</body>
+</html>
