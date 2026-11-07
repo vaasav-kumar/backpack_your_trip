@@ -70,6 +70,14 @@
     window.addEventListener("keydown", (e) => {
       if (e.key === "Escape") closeMenu();
     });
+
+    window.addEventListener(
+      "resize",
+      () => {
+        if (window.matchMedia("(min-width: 1080px)").matches) closeMenu();
+      },
+      { passive: true }
+    );
   }
 
   const currentPage = (location.pathname.split("/").pop() || "index.html").toLowerCase();
