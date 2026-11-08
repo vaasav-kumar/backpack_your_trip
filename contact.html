@@ -24,9 +24,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://images.unsplash.com" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Manrope:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="icon" href="assets/favicon.png" type="image/png" />
-  <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32" />
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="icon" href="assets/favicon-16.png?v=2" type="image/png" sizes="16x16" />
+  <link rel="icon" href="assets/favicon-32.png?v=2" type="image/png" sizes="32x32" />
+  <link rel="icon" href="assets/favicon.png?v=2" type="image/png" sizes="64x64" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=2" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body id="top">
@@ -67,7 +68,7 @@
           <h1 id="contact-title">Tell Us About Your Trip</h1>
           <p>
             Share a few details and we'll follow up to understand your preferences.
-            This form collects your enquiry on this page — it is not connected to a backend yet.
+            Your enquiry is emailed straight to us when you submit.
           </p>
           <p class="contact-alt">
             Planning in a WhatsApp group?
@@ -181,18 +182,23 @@
               <textarea id="notes" name="notes" rows="4" placeholder="Interests, pace, must-sees, dietary needs…"></textarea>
             </div>
 
+            <div class="form-honeypot" aria-hidden="true">
+              <label for="enquiry-honey">Leave blank</label>
+              <input id="enquiry-honey" type="text" name="_honey" tabindex="-1" autocomplete="off" />
+            </div>
+
             <button class="btn btn-primary btn-block" type="submit">Let's Plan My Trip</button>
-            <p class="form-disclaimer">Frontend validation only for now. Submissions are not sent or stored until a form service is connected.</p>
+            <p class="form-status" id="form-status" role="status" aria-live="polite" hidden></p>
+            <p class="form-disclaimer">We'll email your details to backpackyourtrip@gmail.com and follow up soon.</p>
           </form>
 
           <div class="form-success" id="form-success" hidden tabindex="-1">
             <div class="success-mark" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
             </div>
-            <h3>Thanks — your enquiry looks good.</h3>
+            <h3>Thanks — your enquiry is on its way.</h3>
             <p>
-              This is a local success state only. Nothing has been emailed or saved yet.
-              When a form service is connected, we'll use these details to follow up.
+              We've received your details and will follow up by email or WhatsApp shortly.
             </p>
             <button class="btn btn-ghost" type="button" data-reset-form>Send another enquiry</button>
           </div>
