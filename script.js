@@ -164,10 +164,14 @@
     }, true);
   }
 
-  /* Enquiry form — frontend validation + local success state */
+  /* Enquiry form — validate, email via FormSubmit, show success/error */
   const form = document.getElementById("enquiry-form");
   const success = document.getElementById("form-success");
+  const formStatus = document.getElementById("form-status");
   const resetBtn = document.querySelector("[data-reset-form]");
+  const submitBtn = form?.querySelector('button[type="submit"]');
+  const submitLabel = submitBtn?.textContent || "Let's Plan My Trip";
+  const inbox = config.email || "backpackyourtrip@gmail.com";
 
   const validators = {
     fullName: (v) => (v.trim().length >= 2 ? "" : "Please enter your full name."),
@@ -194,6 +198,21 @@
     error.textContent = message || "";
   };
 
+  const setFormStatus = (message, tone = "") => {
+    if (!formStatus) return;
+    formStatus.hidden = !message;
+    formStatus.textContent = message || "";
+    formStatus.classList.toggle("is-error", tone === "error");
+    formStatus.classList.toggle("is-info", tone === "info");
+  };
+
+  const setSubmitting = (busy) => {
+    if (!submitBtn) return;
+    submitBtn.disabled = busy;
+    submitBtn.setAttribute("aria-busy", busy ? "true" : "false");
+    submitBtn.textContent = busy ? "Sending…" : submitLabel;
+  };
+
   const validateForm = () => {
     let valid = true;
     Object.keys(validators).forEach((name) => {
@@ -206,14 +225,48 @@
     return valid;
   };
 
+  const buildPayload = () => {
+    const data = new FormData(form);
+    const fullName = String(data.get("fullName") || "").trim();
+    const email = String(data.get("email") || "").trim();
+
+    return {
+      name: fullName,
+      email,
+      _replyto: email,
+      WhatsApp: String(data.get("whatsapp") || "").trim(),
+      "Departure City": String(data.get("departureCity") || "").trim(),
+      Destination: String(data.get("destination") || "").trim(),
+      "Travel Dates": String(data.get("travelDates") || "").trim(),
+      Travellers: String(data.get("travellers") || "").trim(),
+      Budget: String(data.get("budget") || "").trim(),
+      "Travel Type": String(data.get("travelType") || "").trim(),
+      Notes: String(data.get("notes") || "").trim(),
+      _subject: `New trip enquiry from ${fullName}`,
+      _template: "table",
+      _captcha: "false",
+      _honey: String(data.get("_honey") || ""),
+      _url: window.location.href,
+    };
+  };
+
+  const showSuccess = () => {
+    setFormStatus("");
+    form.hidden = true;
+    success.hidden = false;
+    success.focus?.();
+    success.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  };
+
   if (form && success) {
     form.addEventListener("input", (e) => {
       const target = e.target;
       if (!(target instanceof HTMLElement) || !target.name || !validators[target.name]) return;
       setError(target.name, validators[target.name](target.value));
+      setFormStatus("");
     });
 
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
       if (!validateForm()) {
         const firstInvalid = form.querySelector(".field.is-invalid input, .field.is-invalid select");
@@ -221,11 +274,51 @@
         return;
       }
 
-      // No network request — ready for Formspree / backend later.
-      form.hidden = true;
-      success.hidden = false;
-      success.focus?.();
-      success.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      // Honeypot filled → treat as success without sending
+      if (String(new FormData(form).get("_honey") || "").trim()) {
+        showSuccess();
+        return;
+      }
+
+      setSubmitting(true);
+      setFormStatus("");
+
+      try {
+        const response = await fetch(
+          `https://formsubmit.co/ajax/${encodeURIComponent(inbox)}`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+            body: JSON.stringify(buildPayload()),
+          }
+        );
+
+        const result = await response.json().catch(() => ({}));
+        const ok = String(result.success) === "true";
+        // First-ever submit asks the inbox to activate; FormSubmit keeps those
+        // submissions and delivers them after confirmation.
+        const pendingActivation = /activat/i.test(String(result.message || ""));
+
+        if (!ok && !pendingActivation) {
+          throw new Error(
+            result.message || "We couldn't send your enquiry. Please try again."
+          );
+        }
+
+        showSuccess();
+      } catch (err) {
+        const message =
+          err instanceof Error && err.message
+            ? err.message
+            : "We couldn't send your enquiry. Please try again or email us directly.";
+        setFormStatus(message, "error");
+        formStatus?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      } finally {
+        setSubmitting(false);
+      }
     });
   }
 
@@ -233,6 +326,7 @@
     resetBtn.addEventListener("click", () => {
       form.reset();
       Object.keys(validators).forEach((name) => setError(name, ""));
+      setFormStatus("");
       success.hidden = true;
       form.hidden = false;
       form.querySelector("#fullName")?.focus();

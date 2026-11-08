@@ -1769,6 +1769,33 @@ ol {
   text-align: center;
 }
 
+.form-honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.form-status {
+  margin: 0;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.form-status.is-error {
+  color: #b54a3a;
+}
+
+.form-status.is-info {
+  color: var(--muted);
+}
+
+.enquiry-form button[type="submit"]:disabled {
+  opacity: 0.72;
+  cursor: wait;
+}
+
 .form-success {
   text-align: center;
   padding: 2rem 0.5rem;

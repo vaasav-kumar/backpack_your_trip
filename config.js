@@ -1,6 +1,6 @@
 /**
  * Site configuration — update contact details in one place.
- * Form submissions are frontend-only until a backend or form service is connected.
+ * Enquiry form posts via FormSubmit to the site email (see script.js).
  */
 window.SITE_CONFIG = {
   brand: "BackpackYourTrip",
