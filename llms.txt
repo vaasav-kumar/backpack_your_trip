@@ -1,0 +1,34 @@
+# BackpackYourTrip
+
+> Personalised vacation planner and trip planning service. Custom travel itineraries, destination research, route planning, stay recommendations and budget guidance for independent travellers. You book. We plan. You travel. Website: https://backpackyourtrip.com
+
+BackpackYourTrip is a travel-planning studio (not a tour operator). We design personalised day-wise itineraries; clients book flights, hotels and tickets themselves. Planning fees start from ₹5,000. Free consultation / first call. Contact: backpackyourtrip@gmail.com | +91 86105 46126 | Instagram @backpack.yourtrip
+
+Keywords: vacation planner, trip planner, travel planner, holiday planner, custom itinerary, personalised travel planning, trip planning service, vacation itinerary, independent travel.
+
+## Core pages
+
+- [Home](https://backpackyourtrip.com/): Vacation planner overview and enquiry
+- [How It Works](https://backpackyourtrip.com/how-it-works.html): Three-step trip planning process
+- [Our Services](https://backpackyourtrip.com/services.html): Itinerary design, routes, stays, budget and prep guidance
+- [Pricing](https://backpackyourtrip.com/pricing.html): Transparent planning fees from ₹5,000
+- [Destinations](https://backpackyourtrip.com/destinations.html): Trip inspiration (Japan, Korea, Sri Lanka, Bali, Thailand, Vietnam, Europe, Oman, India and more)
+- [Who It's For](https://backpackyourtrip.com/who.html): Couples, honeymooners, families, friends, solo and first-time travellers
+- [Why BackpackYourTrip](https://backpackyourtrip.com/why.html): Personalised plans vs rigid tour packages
+- [About](https://backpackyourtrip.com/about.html): Travel planning studio background
+- [FAQ](https://backpackyourtrip.com/faq.html): Bookings, packages, deliverables and process
+- [Contact / Plan My Trip](https://backpackyourtrip.com/contact.html): Start a custom vacation or trip plan
+- [Blog](https://backpackyourtrip.com/blog.html): Trip planning tips and destination notes
+
+## Blog
+
+- [How We Build a Personalised Itinerary](https://backpackyourtrip.com/blog-how-we-plan.html): Research and day-by-day planning method
+- [Travel Budget Conversation](https://backpackyourtrip.com/blog-budget-conversation.html): Budget trade-offs for vacation planning
+- [First Time in Japan](https://backpackyourtrip.com/blog-japan-first-timer.html): Japan trip planner tips for first-timers
+- [Slow Travel in Sri Lanka](https://backpackyourtrip.com/blog-sri-lanka-slow.html): Sri Lanka vacation itinerary pacing
+- [Tour Packages vs Custom Planning](https://backpackyourtrip.com/blog-tour-packages.html): Why independent travellers choose a custom trip plan
+
+## Optional
+
+- [WhatsApp Chat Summary](https://backpackyourtrip.com/chat-summary.html): Share a group chat summary for trip intake
+- [Sitemap](https://backpackyourtrip.com/sitemap.xml): Full URL list for crawlers

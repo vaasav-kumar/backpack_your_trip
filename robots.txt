@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://backpackyourtrip.com/sitemap.xml
+
+# LLM-friendly site summary (https://llmstxt.org/)
+# https://backpackyourtrip.com/llms.txt
